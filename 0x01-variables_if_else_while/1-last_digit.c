@@ -3,13 +3,12 @@
 #include <stdio.h>
 
 /**
- * main - checkes the value of the last digit of a number
+ * main - Check the value of a last digit number.
+ * @void: the function gets no parameter as input.
  *
- * @void - there is no parameter in this function
- *
- * Description: create a randum number, and then checks the last digit of it, and print a message based on its value.
+ * Description: Print to the screen a string descripting the last digit value of a randomly generated number.
  * Return: zero always.
-*/
+ */
 
 int main(void)
 {
