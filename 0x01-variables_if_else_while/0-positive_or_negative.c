@@ -8,7 +8,7 @@
  * @void: takes no input
  *
  * Description: prints a message with the value of the number n.
- * return: 0 always  
+ * return: 0 always
  */
 
 int main(void)
