@@ -5,9 +5,10 @@
 /**
  * main - checks if a number is negative or positive or zero
  *
- * void: takes no input
+ * @void: takes no input
  *
  * Description: prints a message with the value of the number n.
+ * return: 0 always  
  */
 
 int main(void)
