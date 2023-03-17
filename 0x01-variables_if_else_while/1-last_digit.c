@@ -6,7 +6,8 @@
  * main - Check the value of a last digit number.
  * @void: the function gets no parameter as input.
  *
- * Description: Print to the screen a string descripting the last digit value of a randomly generated number.
+ * Description: Print to the screen a string descripting
+ * the last digit value of a randomly generated number.
  * Return: zero always.
  */
 
