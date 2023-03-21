@@ -1,22 +1,15 @@
 #include "main.h"
 
-/**
- * main - printing the alphabets.
- * @void: takes no parametrs
- *
- * Description: Printing lowe case alphabets using a function from main.h
- * Return: 0.
- */
-
-int main(void)
+void print_alphabet(void)
 {
-	int i;
+	char letter = 'a';
 
-	for (i = 97 ; i < 122 ; i++)
+	while (letter <= 'z')
 	{
-		_putchar(i);
+		_putchar(letter);
+		letter++;
 	}
+
 	_putchar('\n');
 
-	return (0);
 }
