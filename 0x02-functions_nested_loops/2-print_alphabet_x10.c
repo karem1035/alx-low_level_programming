@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_alphabet_x10 - start point/
@@ -8,6 +9,7 @@
  * Retrun: 0.
  */
 
+	
 void print_alphabet_x10(void)
 {
 	int i;
@@ -18,9 +20,9 @@ void print_alphabet_x10(void)
 
 		while (c <= 'z')
 		{
-			_putchar(c);
+			printf("%c",c);
 			c++;
 		}
-		_putchar('\n');
+		printf("\n");
 	}
 }
