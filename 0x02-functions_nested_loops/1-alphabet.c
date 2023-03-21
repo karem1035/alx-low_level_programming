@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * print_alphabet - start point.
+ * @void: no parameter.
+ *
+ * Description: prints the alphabets in lowercase.
+ * Return: 0.
+ */
 void print_alphabet(void)
 {
 	char letter = 'a';
