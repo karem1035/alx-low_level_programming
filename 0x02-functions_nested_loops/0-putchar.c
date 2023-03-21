@@ -1,15 +1,23 @@
 #include "main.h"
 
+/**
+ * main - prints a text.
+ * @void: no parameters.
+ *
+ * Description: Prints a the text using a function from the header file.
+ * Return: 0.
+ */
+
+
 int main(void)
 {
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
-	_putchar('\n');
+	char text[] = "_putchar\n";
+
+	int i;
+
+	for (i = 0 ; text[i] != '\0' ; i++)
+	{
+		_putchar(text[i]);
+	}
 	return (0);
 }
