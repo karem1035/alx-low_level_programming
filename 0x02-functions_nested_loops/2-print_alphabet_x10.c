@@ -9,7 +9,6 @@
  * Retrun: 0.
  */
 
-	
 void print_alphabet_x10(void)
 {
 	int i;
@@ -20,7 +19,7 @@ void print_alphabet_x10(void)
 
 		while (c <= 'z')
 		{
-			printf("%c",c);
+			printf("%c", c);
 			c++;
 		}
 		printf("\n");
