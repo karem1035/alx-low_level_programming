@@ -7,6 +7,7 @@
  * Description: Printing lowe case alphabets using a function from main.h
  * Return: 0.
  */
+
 int main(void)
 {
 	int i;
@@ -16,4 +17,6 @@ int main(void)
 		_putchar(i);
 	}
 	_putchar('\n');
+
+	return (0);
 }
