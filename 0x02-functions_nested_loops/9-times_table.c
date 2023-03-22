@@ -21,25 +21,22 @@ void times_table(void)
 		for (j = 0 ; j < 10 ; j++)
 		{
 			int number = i * j;
-
-			printf("%d", number);
-
-			if (j != 9)
+			
+			if (j == 0)
 			{
-				printf(",");
+				printf("%d", number);
+			}
+			else if (j == 9)
+			{
+				printf("%d\n", number);
+			}
+			else if (number < 10)
+			{
+				printf(",  %d", number);
 			}
 			else
 			{
-				printf("\n");
-			}
-
-			if (number < 10)
-			{
-				printf("  ");
-			}
-			else
-			{
-				printf(" ");
+				printf(", %d", number);
 			}
 		}
 	}
