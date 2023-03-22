@@ -16,7 +16,7 @@ void times_table(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		int number = i * 9'
+		int number = i * 9;
 
 		if (number == 81)
 		{
@@ -24,12 +24,11 @@ void times_table(void)
 		}
 		else if (number < 9)
 		{
-			printf("%d,  ", number)
+			printf("%d,  ", number);
 		}
 		else
 		{
-			printf("%d, ");
+			printf("%d, ", number);
 		}
 	}
-	return (0);
 }
