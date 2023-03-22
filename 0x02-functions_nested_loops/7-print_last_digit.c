@@ -10,16 +10,19 @@
 
 int print_last_digit(int x)
 {
+	int last_digit;
+
 	if (x < 0)
 	{
-		int last_digit = x % 10 * -1;
+		last_digit = x % 10 * -1;
+		_putchar(last_digit);
 	}
 	else
 	{
-		int last_digit = x % 10;
+		last_digit = x % 10;
+		_putchar(last_digit);
 	}
 
-	_putchar (last_digit);
 
 	return (last_digit);
 }
