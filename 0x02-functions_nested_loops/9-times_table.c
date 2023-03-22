@@ -16,19 +16,28 @@ void times_table(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		int number = i * 9;
+		int j;
 
-		if (number == 81)
+		for (j = 0 ; j < 10 ; j++)
 		{
-			printf("%d", number);
-		}
-		else if (number < 9)
-		{
-			printf("%d,  ", number);
-		}
-		else
-		{
-			printf("%d, ", number);
+			int number = i * j;
+
+			if (j == 9)
+			{
+				printf("%d", number);
+			}
+			else if (number < 9)
+			{
+				printf("%d,  ", number);
+			}
+			else if (number < 100)
+			{
+				printf("%d, ", number);
+			}
+			else
+			{
+				printf("%d", number);
+			}
 		}
 	}
 }
