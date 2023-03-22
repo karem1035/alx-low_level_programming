@@ -24,7 +24,7 @@ void times_table(void)
 
 			if (j == 9)
 			{
-				printf("%d", number);
+				printf("%d\n", number);
 			}
 			else if (number < 9)
 			{
