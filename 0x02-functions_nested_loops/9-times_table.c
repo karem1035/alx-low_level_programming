@@ -14,30 +14,34 @@ void times_table(void)
 {
 	int i;
 
-	for (i = 0; i < 10; i++)
-	{
-		int j;
-
-		for (j = 0 ; j < 10 ; j++)
+		for (i = 0 ; i < 10 ; i++)
 		{
-			int number = i * j;
-			
-			if (j == 0)
+			int j;
+
+			for (j = 0 ; j < 10 ; j++)
 			{
-				printf("%d", number);
-			}
-			else if (j == 9)
-			{
-				printf("%d\n", number);
-			}
-			else if (number < 10)
-			{
-				printf(",  %d", number);
-			}
-			else
-			{
-				printf(", %d", number);
+				int number = i * j;
+
+				if (j == 0)
+				{
+					printf("%d", number);
+				}
+				else if (j == 9 && number < 10)
+				{
+					printf(",  %d\n", number);
+				}
+				else if (j == 9 && number >= 10)
+				{
+					printf(", %d\n", number);
+				}
+				else if (number < 10)
+				{
+					printf(",  %d", number);
+				}
+				else
+				{
+					printf(", %d", number);
+				}
 			}
 		}
-	}
 }
