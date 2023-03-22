@@ -36,7 +36,7 @@ void times_table(void)
 			}
 			else if (number < 100)
 			{
-				printf("  %d,", number);
+				printf(" %d,", number);
 			}
 			else
 			{
