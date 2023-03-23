@@ -12,7 +12,7 @@ void print_most_numbers(void)
 {
 	char c;
 
-	c = '9'
+	c = '9';
 
 	while (c >= 0)
 	{
