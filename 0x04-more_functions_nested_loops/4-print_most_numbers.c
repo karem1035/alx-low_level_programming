@@ -8,15 +8,15 @@
  * Return: void.
  */
 
- void print_most_numbers(void)
- {
+void print_most_numbers(void)
+{
 	char c;
 
 	c = '9'
 
-	while ( c >= 0)
+	while (c >= 0)
 	{
-		if ( c != '2' && c != '4')
+		if (c != '2' && c != '4')
 		{
 			_putchar(c);
 		}
@@ -24,4 +24,4 @@
 	}
 
 	_putchar('\n');
- }
+}
