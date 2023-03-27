@@ -2,7 +2,7 @@
 
 /**
  * reset_to_98 - changes the value of pointer.
- * @*n: ponter as parameter
+ * @n: ponter as parameter
  *
  * Description: change the value where the pointer points to.
  * Retrun: Void.
