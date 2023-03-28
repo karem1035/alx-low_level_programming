@@ -1,4 +1,13 @@
 #include "main.h"
+#include "main.h"
+
+/**
+ * puts2 - prints every other value of stirng
+ * @str: the string paramter.
+ *
+ * Description: prints every second value of string.
+ * Return: void.
+ */
 
 void puts2(char *str)
 {
@@ -8,14 +17,15 @@ void puts2(char *str)
 	{
 		i++;
 	}
-	
+
+
 	for(j = 0 ; j < i ; j++)
 	{
-		if(i % 2 == 0 || i == 0)
+		if(j % 2 == 0 || i == 0)
 		{
-			printf("%c", str[i]);
+			_putchar(str[j]);
 		}
 	}
 
-	_putchar('\n');
+	_putchar('\n';
 }
