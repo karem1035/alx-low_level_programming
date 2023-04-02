@@ -23,12 +23,13 @@ char *_strcpy(char *dest, char *src)
                 n++;
         }
 
-        dest[n];
         
         for (i = 0 ; i < n ; i++)
         {
                 dest[i] = src[i];
+                
         }
+        dest[n] = '\0';
 
         return dest;
 }
