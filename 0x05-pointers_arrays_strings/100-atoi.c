@@ -27,14 +27,8 @@ int _atoi(char *s)
 	}
 	while (*(s + j) >= '0' && *(s + j) <= '9')
 	{
-		if (total > 0)
-		{
-			total *= 10;
-		}
-		num = *(s + j) - '0';
-		total = total + num;
-		j++;
+		total = total * 10 + (*(s + j) - '0');
 	}
-	return (total *= sign);
+	return (total * sign);
 }
 
