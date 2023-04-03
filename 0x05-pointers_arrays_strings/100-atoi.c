@@ -71,7 +71,7 @@ int _atoi(char *s)
                 total = total + num;
                 j++;     
         }
-	if (sign = -1)
+	if (sign == -1)
 	{
 		total = 0 - total;
 	}
