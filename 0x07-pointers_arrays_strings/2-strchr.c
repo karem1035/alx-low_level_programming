@@ -6,8 +6,8 @@
  * @s: the string to be checked.
  * @c: the letter we are searching for.
  *
- * Return: (NULL) if the letter hasn't located.
- * Return: The address where the letter is located.
+ * Return: (NULL) if the letter hasn't located,
+ * The address where the letter is located.
  */
 
 char *_strchr(char *s, char c)
