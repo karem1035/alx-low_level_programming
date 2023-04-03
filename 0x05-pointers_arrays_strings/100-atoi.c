@@ -6,11 +6,10 @@
  *
  * Return: total the resulting string.
  */
-
 int _atoi(char *s)
 {
-	int j, sign, total, num = 0;
-
+	int j, num, sign = 1;
+	int total = 0;
 
 	for (j = 0 ; *(s + j) != '\0' ; j++)
 	{
@@ -18,24 +17,21 @@ int _atoi(char *s)
 		{
 			if (*(s + j) == '-')
 			{
-				sign *= -1;
+			sign = sign * -1;
 			}
 		}
 		else if (*(s + j) >= '0' && *(s + j) <= '9')
 		{
-			break;
+		break;
 		}
 	}
-
 	while (*(s + j) >= '0' && *(s + j) <= '9')
 	{
 		if (total > 0)
 		{
 			total *= 10;
 		}
-
 		num = *(s + j) - '0';
-
 		total = total + num;
 		j++;
 	}
