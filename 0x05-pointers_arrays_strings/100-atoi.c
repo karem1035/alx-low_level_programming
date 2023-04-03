@@ -9,7 +9,7 @@
 
 int _atoi(char *s)
 {
-	int j, sign, total = 0;
+	int j, sign, total, num = 0;
 
 
 	for (j = 0 ; *(s + j) != '\0' ; j++)
@@ -34,7 +34,7 @@ int _atoi(char *s)
 			total *= 10;
 		}
 
-		int num = *(s + j) - '0';
+		num = *(s + j) - '0';
 
 		total = total + num;
 		j++;
