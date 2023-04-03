@@ -8,8 +8,7 @@
 */
 int _atoi(char *s)
 {
-	int j, num, sign = 1;
-	int total = 0;
+	int j, sign = 1, total = 0;
 
 	for (j = 0 ; *(s + j) != '\0' ; j++)
 	{
@@ -28,6 +27,7 @@ int _atoi(char *s)
 	while (*(s + j) >= '0' && *(s + j) <= '9')
 	{
 		total = total * 10 + (*(s + j) - '0');
+		j++;
 	}
 	return (total * sign);
 }
