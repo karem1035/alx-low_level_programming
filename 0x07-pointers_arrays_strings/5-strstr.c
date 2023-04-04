@@ -9,29 +9,30 @@
  * Return: Locationo of the first occurence, or NULL otherwise.
  */
 
-
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
+	int i = 0, j;
 
-	for (i = 0 ; haystack[i] ; i++)
+	while (*(haystack + i))
 	{
 		j = 0;
 
-		if (haystack[i] == needle[j])
+		if (*(haystack + i) == needle[j])
 		{
-			j++;
-
-			while (haystack[i + j] == needle[j])
+			while (*(haystack + i) == needle[j])
 			{
+				i++;
 				j++;
 
-				if (!needle[j + 1])
+				if (needle[j] == '\0')
 				{
-					return (&haystack[i]);
+					return (haystack + i - j);
 				}
 			}
+
 		}
+
+		i++;
 	}
 
 	return (NULL);
