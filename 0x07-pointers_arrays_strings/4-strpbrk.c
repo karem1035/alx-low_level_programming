@@ -1,4 +1,4 @@
-#include "man.h"
+#include "main.h"
 
 /**
  * _strpbrk - return the first occurence of a letter.
