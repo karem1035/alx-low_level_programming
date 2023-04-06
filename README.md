@@ -1,1 +1,1 @@
-# This is a readme file for a task in ALX called "0x00. C - Hello, World"
+# This is a directory for all the files realted to ALX Low level tasks"
