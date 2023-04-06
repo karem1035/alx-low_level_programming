@@ -17,24 +17,28 @@ int is_prime_number(int n)
 		return (0);
 	}
 
-	check_prime(n, i);
+	return (check_prime(n, i));
 }
+
+/**
+ * check_prime - checks if a number is prime or not.
+ * @n: the number to be checked.
+ * @i: the number to be raised.
+ *
+ * Return: 0 if it is not prime. 1 if it is prime.
+ */
+
 
 int check_prime(int n, int i)
 {
-	if (i < n)
+	if (i < n && n % i == 0)
 	{
-		if (n % i == 0)
-		{
-			return (0);
-		}
-		else
-		{
-			check_prime(n, i + 1);
-		}
+		return (0);
 	}
-	else
+	else if (n == i)
 	{
 		return (1);
 	}
+
+	return (check_prime(n, i + 1));
 }
