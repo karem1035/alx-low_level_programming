@@ -11,7 +11,8 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, sum = 0, add = 0;
+	char *letter;
 
 	if (argc <= 1)
 	{
@@ -21,11 +22,11 @@ int main(int argc, char *argv[])
 
 	for (i = 1 ; i < argc ; i++)
 	{
-		int letter = 0;
+		letter = argv[i];
 
-		while (*(argv[i] + letter) != '\0')
+		while (*letter != '\0')
 		{
-			if (*(argv[i]) < 48 || *(argv[i]) > 57)
+			if (*letter < 47 || *letter > 57)
 			{
 				printf("Error\n");
 
@@ -36,7 +37,8 @@ int main(int argc, char *argv[])
 
 		}
 
-		sum += atoi(argv[i]);
+		add = atoi(argv[i]);
+		sum += add;
 	}
 
 	printf("%d\n", sum);
