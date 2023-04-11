@@ -13,6 +13,11 @@ char *_strdup(char *str)
 	char *nstr;
 	int i = 0, j;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	while (*(str + i))
 	{
 		i++;
