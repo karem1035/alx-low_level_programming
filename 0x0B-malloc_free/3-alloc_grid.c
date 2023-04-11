@@ -18,11 +18,16 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 
-	tda = malloc(sizeof(int *) * width);
+	tda = malloc(sizeof(int *) * height);
 
-	for (i = 0; i < width; i++)
+	if (tda == NULL)
 	{
-		tda[i] = malloc(sizeof(int) * height);
+		return (NULL);
+	}
+
+	for (i = 0; i < height; i++)
+	{
+		tda[i] = malloc(sizeof(int) * width);
 		if (tda[i] == NULL)
 		{
 			for (; i >= 0 ; i--)
@@ -33,9 +38,9 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		}
 	}
-	for (i = 0; i < width; i++)
+	for (i = 0; i < height; i++)
 	{
-		for (j = 0; j < height; j++)
+		for (j = 0; j < width; j++)
 		{
 			tda[i][j] = 0;
 		}
