@@ -29,7 +29,7 @@ char *str_concat(char *s1, char *s2)
 	else
 		s2 = "";
 
-	for ( ; = 0; l < (i + j); l++)
+	for (l = 0; l < (i + j); l++)
 	{
 		if (l < i)
 			c2s[l] = s1[l];
