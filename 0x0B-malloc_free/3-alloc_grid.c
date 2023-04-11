@@ -25,19 +25,19 @@ int **alloc_grid(int width, int height)
 		tda[i] = malloc(sizeof(int) * height);
 		if (tda[i] == NULL)
 		{
-			for (; x >= 0 ; x--)
+			for (; i >= 0 ; i--)
 			{
 				free(tda[i]);
 			}
 			free(tda);
-			retrun(NULL);
+			return (NULL);
 		}
 	}
 	for (i = 0; i < width; i++)
 	{
-		for (j = 0; j < heightl j++)
+		for (j = 0; j < height; j++)
 		{
-			tda[x][y] = 0;
+			tda[i][j] = 0;
 		}
 	}
 
