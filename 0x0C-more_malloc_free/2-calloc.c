@@ -11,24 +11,25 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int index, *mem;
+	unsigned int i;
+	char *p;
 
-	if (nmemb == 0 || size == 0)
+	if (nmemb <= 0 || size <= 0)
 	{
 		return (NULL);
 	}
 
-	mem = malloc(nmemb * size);
+	p = malloc(nmemb * size);
 
-	if (mem == NULL)
+	if (p == NULL)
 	{
 		return (NULL);
 	}
 
-	for (index = 0; index < (nmemb * size); index++)
+	for (i = 0; i < (nmemb * size); i++)
 	{
-		mem[index] = '\0';
+		p[i] = 0;
 	}
 
-	return (mem);
+	return (p);
 }
