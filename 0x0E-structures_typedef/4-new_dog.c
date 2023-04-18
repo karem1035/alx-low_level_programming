@@ -3,6 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * new_dog - creates a new variable of type dog_t
+ * @name: name value.
+ * @age: age value.
+ * @owner: owner name.
+ *
+ * Return: address of the new variable.
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *n_dog;
@@ -14,7 +23,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	n_dog = malloc(sizeof(dog_t));
 	cname = malloc(sizeof(char) * (lname + 1));
-	cowner = malloc (sizeof(char) * (lowner + 1));
+	cowner = malloc(sizeof(char) * (lowner + 1));
 
 
 	if (n_dog == NULL)
