@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int _strlen(char *s);
+char *_strcpy(char *s1, char *s2);
+
+
+
+
 /**
  * new_dog - creates a new dog.
  * @name: name of the new dog.
@@ -13,18 +19,71 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *n = name;
-	char *o = owner;
-	dog_t *my_dog = malloc(sizeof(dog_t));
+	int lname = _strlen(name);
+	int lowner = _strlen(owner);
+	char *cowner = malloc(sizeof(char) * (lowner + 1));
+	char *cname = malloc(sizeof(char) * (lname + 1));
+	dog_t *n_dog = malloc(sizeof(dog_t));
 
-	if (my_dog == NULL)
+	if (n_dog == NULL)
+	{
+		return (NULL);
+	}
+	if (cname == NULL)
+	{
+		return (NULL);
+	}
+	if (cname == NULL)
 	{
 		return (NULL);
 	}
 
-	my_dog->name = n;
-	my_dog->age = age;
-	my_dog->owner = o;
+	_strcpy(cname, name);
+	_strcpy(cowner, owner);
 
-	return (my_dog);
+	n_dog->name = name;
+	n_dog->age = age;
+	n_dog->owner = owner;
+
+	return (n_dog);
+}
+
+/**
+ * _strlen - returns the length of a string.
+ * @s: the address of the string.
+ *
+ * Return: int n, the length.
+ */
+
+int _strlen(char *s)
+{
+	int n = 0;
+
+	while (*(s + n))
+	{
+		n++;
+	}
+
+	return (n);
+}
+
+/**
+ * _strcpy - copies to strengs
+ * @s1: string 1.
+ * @s2: string 2.
+ *
+ * Return: address of the resulted string.
+ */
+
+char *_strcpy(char *s1, char *s2)
+{
+	int i;
+
+	for (i = 0; s2[i]; i++)
+	{
+		s1[i] = s2[i];
+	}
+	s1[i] = '\0';
+
+	return (s1);
 }
