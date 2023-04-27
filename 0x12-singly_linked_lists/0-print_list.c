@@ -1,28 +1,35 @@
 #include "lists.h"
 
 /**
- * print_list - function that prints all the elements of a list_t list.
+ * print_list - prints all liked list nodes.
+ * @h: the first node pointer.
  *
- * @h: This take the value of the single list
- *
- * Return: Return: the number of nodes
- *         If str is NULL, print [0] (nil)
+ * Return: number of nodes.
  */
 
 size_t print_list(const list_t *h)
 {
-	unsigned int count = 0;
+	unsigned int c = 0;
 
 	if (h == NULL)
-		return (0);
-	while (h != NULL)
+	{
+		return (c);
+	}
+
+	while (h)
 	{
 		if (h->str == NULL)
-			printf("[%u] (nil)\n", h->len);
+		{
+			printf("[0] (nil)\n");
+		}
 		else
-			printf("[%u] %s\n", h->len, h->str);
-		count += 1;
+		{
+			printf("[%d] %s\n", h->len, h->str);
+		}
+
 		h = h->next;
+		c++;
 	}
-	return (count);
+
+	return (c);
 }
