@@ -1,3 +1,5 @@
+#include "lists.h"
+
 /**
  * free_list - frees a linked list memory
  * @head: head of the first list item.
