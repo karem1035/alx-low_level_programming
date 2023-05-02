@@ -5,7 +5,7 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *current_node, *tmp_node;
+	listint_t *current_node, *temp;
 
 	if (*head)
 	{
