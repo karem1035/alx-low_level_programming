@@ -4,6 +4,7 @@
  * @head: the head of the list.
  * Return: the number of nodes.
  */
+
 size_t print_listint_safe(const listint_t *head)
 {
 	long int diff;
