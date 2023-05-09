@@ -14,15 +14,12 @@ int create_file(const char *filename, char *text_content)
 
 	if (fd < 0 || filename == NULL)
 		return (-1);
-	if (text_content == NULL)
+	if (text_content != NULL)
 	{
-		return (-1);
-
+		w = write(fd, text_content, len);
+		if (w < 0)
+			return (-1);
 	}
-	w = write(fd, text_content, len);
-	if (w < 0)
-		return (-1);
-
 	close(fd);
 	return (1);
 }
