@@ -1,7 +1,9 @@
 #include "main.h"
 /**
- *
- *
+ * read_textfile - it reads number of char from a text file.
+ * @filename: the filename.
+ * @letters: the number of letters to be read.
+ * Return: number of chars printed.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
