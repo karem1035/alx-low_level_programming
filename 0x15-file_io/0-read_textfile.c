@@ -7,32 +7,43 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int textfile;
-	ssize_t toread, towrite;
+	int fd, r, w;
 	char *c;
 
-	if (!filename)
+	if (filename == NULL)
 	{
 		return (0);
 	}
 
-	textfile = open(filename, O_RDONLY);
-
-	if (textfile == -1)
+	fd = open(filename, O_RDWR);
+	if (fd < 0)
 	{
 		return (0);
 	}
-	c = malloc(sizeof(char) * (letters));
+
+	c = malloc(sizeof(char) * letters);
 	if (!c)
 	{
+		close(fd);
 		return (0);
 	}
-	toread = read(textfile, c, letters);
-	towrite = write(STDOUT_FILENO, c, toread);
+	r = read(fd, c, letters);
+	if (r < 0)
+	{
+		close(fd);
+		free(c);
+		return (0);
+	}
+	w = write(STDOUT_FILENO, c, letters);
+	if (w < 0)
+	{
+		close(fd);
+		free(c);
+		return (0);
+	}
 
-	close(textfile);
-
+	close(fd);
 	free(c);
 
-	return (towrite);
+	return (letters);
 }
