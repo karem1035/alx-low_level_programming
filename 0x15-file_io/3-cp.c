@@ -68,6 +68,5 @@ int safe_close(int description)
 	{
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", description);
 	}
-	free(buffer);
 	return (er);
 }
