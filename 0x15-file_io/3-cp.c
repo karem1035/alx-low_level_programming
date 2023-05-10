@@ -30,9 +30,8 @@ int main(int argc, char *argv[])
 	if (r < 0)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1), exit(98);
 	if (close(fd1) < 0)
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd2), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
 	if (close(fd2) < 0)
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd2), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
 	return (0);
 }
-
