@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1);
 		exit(98);
 	}
-	fd2 = open(file2, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd2 = open(file2, O_CREAT | O_WRONLY | O_TRUNC | O_EXCL, 0664);
 	if (fd2 < 0)
 	{
 		safe_close(fd1);
@@ -68,5 +68,6 @@ int safe_close(int description)
 	{
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", description);
 	}
+	free(buffer);
 	return (er);
 }
