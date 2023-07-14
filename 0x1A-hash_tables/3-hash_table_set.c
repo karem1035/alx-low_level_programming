@@ -16,13 +16,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         new_node->key = strdup(key);
         new_node->value = strdup(value);
         if (ht->array[index] == NULL)
+	{
                 ht->array[index] = new_node;
+		return (1);
+	}
         else
                 while (i < ht->size)
                 {
                         if (ht->array[i] == NULL)
+			{
                                 ht->array[i] = new_node;
+				return (1);
+			}
                         i++;
                 }
-        return (0);
+        return (1);
 }
