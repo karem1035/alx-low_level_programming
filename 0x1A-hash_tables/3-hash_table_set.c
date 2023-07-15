@@ -58,7 +58,7 @@ int create_node(hash_node_t *new_node, const char *key, const char *value)
 	if (new_node == NULL)
 		return (1);
 
-	new_node->key - strdup(key);
+	new_node->key = strdup(key);
 	new_node->value = strdup(value);
 
 	if (new_node->key == NULL || new_node->value == NULL)
