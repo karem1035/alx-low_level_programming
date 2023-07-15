@@ -1,6 +1,4 @@
 #include "hash_tables.h"
-hash_node_t *c_new_node(hash_table_t *ht, const char *key, const char *value);
-
 /**
  * hash_table_set - set a node at hash tables.
  * @ht: the table pointer.
@@ -13,11 +11,22 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *new_node, *current;
 
-	index = key_index((const unsigned char *) key, ht->size);
-	new_node = c_new_node(ht, key, value);
-	if (new_node == NULL)
+	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
 
+	index = key_index((const unsigned char *) key, ht->size);
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
+	if (new_node->key == NULL || new_node->value == NULL)
+	{
+		free(new_node->key);
+		free(new_node->value);
+		free(new_node);
+		return (0);
+	}
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = new_node;
@@ -42,32 +51,4 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new_node;
 	}
 	return (1);
-}
-
-/**
- * c_new_node - create a new node:
- * @ht: the table
- * @key: the key
- * @value: the value of the key
- * Return: new_node
- */
-hash_node_t *c_new_node(hash_table_t *ht, const char *key, const char *value)
-{
-	hash_node_t *new_node;
-
-	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL)
-		return (new_node);
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
-	if (ht == NULL || key == NULL || *key == '\0')
-		return (new_node);
-	if (new_node->key == NULL || new_node->value == NULL)
-	{
-		free(new_node->key);
-		free(new_node->value);
-		free(new_node);
-		return (new_node);
-	}
-	return (new_node);
 }
