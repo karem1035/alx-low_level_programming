@@ -11,12 +11,22 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *node;
 	char *value;
 
-	if (ht == NULL || *key = '\0')
+	if (ht == NULL || key == NULL)
 		return (NULL);
 	index = key_index((const unsigned char *)key, ht->size);
 	node = ht->array[index];
+
 	if (node == NULL)
 		return (NULL);
-	value = node->value;
-	return (value);
+
+	while (node)
+	{
+		if (strcmp(node->key, key) == 0)
+		{
+			value = node->value;
+			return (value);
+		}
+		node = node->next;
+	}
+	return (NULL);
 }
