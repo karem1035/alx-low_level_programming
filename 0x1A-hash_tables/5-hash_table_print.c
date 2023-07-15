@@ -9,10 +9,10 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned int i;
 	int j = 0;
 
-	printf("{");
 	if (!ht)
 		return;
 	
+	printf("{");
 	for (i = 0; i < ht->size; i++)
 	{
 		current = ht->array[i];
