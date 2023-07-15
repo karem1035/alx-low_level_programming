@@ -42,7 +42,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			current = current->next;
 		}
+		current = ht->array[index];
 		ht->array[index] = new_node;
+		new_node->next = current;
 	}
 	return (1);
 }
