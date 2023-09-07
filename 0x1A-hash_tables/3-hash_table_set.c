@@ -41,7 +41,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	return (0);
 }
-
+/**
+ * create_node - creating new node.
+ * @key: the key of the node.
+ * @value: the value of the new node.
+ * Return: the new node
+*/
 hash_node_t *create_node(const char *key, const char *value)
 {
 	hash_node_t *new_node;
