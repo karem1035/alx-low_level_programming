@@ -1,0 +1,1 @@
+# My Solution to task 0x1A. C - Hash tables
