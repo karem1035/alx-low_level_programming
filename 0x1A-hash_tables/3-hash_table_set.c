@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 /**
  * hash_table_set - adding a node at the hash table
+ * @ht: the hash table
  * @key: the key of the node.
  * @value: the value of the key.
  * Return: 0 if it is succeded 1 if it is not
