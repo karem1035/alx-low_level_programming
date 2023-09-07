@@ -15,15 +15,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || strlen(key) == 0)
 		return (0);
-
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
 		return (0);
-
 	ckey = malloc(sizeof(key));
 	if (!ckey)
 		return (0);
-
 	cvalue = malloc(sizeof(value));
 	if (!cvalue)
 	{
@@ -31,11 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(ckey);
 		return (0);
 	}
-	/* If node exist replace the value*/
-
 	node->key = strcpy(ckey, key);
 	node->value = strcpy(cvalue, value);
-
 	if (ht->array[index] != NULL)
 	{
 		tmp = ht->array[index];
@@ -59,6 +53,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		node->next = NULL;
 		return (1);
 	}
-
 	return (0);
 }
