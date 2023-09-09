@@ -4,60 +4,40 @@
  * @ht: the hash table
  * @key: the key of the node.
  * @value: the value of the key.
- * Return: 0 if it is succeded 1 if it is not
+ * Return: 1 if it is succeded 0 if it is not
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *new_node, *tmp;
+	hash_node_t *tmp, *new_node;
 
-	index = key_index((const unsigned char *)key, ht->size);
-
-	if (ht == NULL || *key == '\n' || *value == '\n')
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
+	index = key_index((const unsigned char *)key, ht->size);
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
 	if (ht->array[index])
 	{
 		tmp = ht->array[index];
 		while (tmp)
 		{
-			if (tmp->key == key)
+			if (strcmp(tmp->key, key) == 0)
 			{
+				free(tmp->value);
+				free(new_node);
 				tmp->value = strdup(value);
 				return (1);
 			}
-			tmp = tmp->next;
 		}
-		new_node = create_node(key, value);
 		new_node->next = ht->array[index];
-		ht->array[index] = new_node;
-	}
-	else
-	{
-		new_node = create_node(key, value);
 		ht->array[index] = new_node;
 		return (1);
 	}
-	return (0);
-}
-/**
- * create_node - creating new node.
- * @key: the key of the node.
- * @value: the value of the new node.
- * Return: the new node
-*/
-hash_node_t *create_node(const char *key, const char *value)
-{
-	hash_node_t *new_node;
-
-	new_node = malloc(sizeof(new_node));
-	if (!new_node)
-		return (NULL);
-
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
-	new_node->next = NULL;
-
-	return (new_node);
+	ht->array[index] = new_node;
+	return (1);
 }
