@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 /**
- *
+ * hash_table_print - print all the hash table.
+ * @ht: the hash table pointer
  */
 void hash_table_print(const hash_table_t *ht)
 {
