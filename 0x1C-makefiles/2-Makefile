@@ -1,9 +1,0 @@
-CC = gcc
-SRC = *.c
-OBJ = *.o
-NAME = school
-
-all: *.o *.c
-	gcc -c -o main.o main.c
-	gcc -c -o school.o school.c
-	gcc main.o school.o -o school
